@@ -1,1 +1,0 @@
-# zifirys-psy

@@ -18,12 +18,16 @@ use App\Http\Controllers\regController;
 |
 */
 
-Route::get('/', [welcomeController::class, 'welcome']);
+Route::get('/', [welcomeController::class, 'welcome'])->name('home');
 
-Route::get('/articles', [artCotroller::class, 'article']);
+Route::get('/articles', [artCotroller::class, 'article'])->name('article');
 
-Route::get('/test', [testController::class, 'tests']);
+Route::get('/test', [testController::class, 'tests'])->name('tests');
 
-Route::get('/recover', [recController::class, 'recover']);
+Route::get('/recover', [recController::class, 'recover'])->name('recover');
 
-Route::get('/reg', [regController::class, 'reg']);
+
+
+Route::get('/reg', [regController::class, 'reg'])->name('register');
+
+Route::post('/register/submit',  [regController::class, 'submit'])->name('register_form');

@@ -24,6 +24,12 @@ label{
 	height: 63px;
 }
 
+.alert-danger{
+	background-color: #c10020;
+	color: #fff;
+	border-color: #5c000f;
+}
+
 .btn-default{
 	color: #fff;
 	background-color: black;

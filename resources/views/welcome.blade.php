@@ -1,5 +1,10 @@
 @extends('headerFooter')
 
+@section('title')
+Добро пожаловать
+@endsection
+
+
 @section('content')
 
 <main>
@@ -7,7 +12,9 @@
       <div class="container">
         <div class="row">
 
+
           <section class="col-lg-3 col-md-3">
+            @include('inc.messages') 
             <div class="panel">
               <div class="panel-heading">
                 <div class="sidebar-header"><p>Телефон доверия</p></div>

@@ -1,5 +1,10 @@
 @extends('headerFooter')
 
+@section('title')
+Восстановление пароля
+@endsection
+
+
 @section('content')
 
   <main>

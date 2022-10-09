@@ -1,5 +1,10 @@
 @extends('headerFooter')
 
+@section('title')
+Тесты
+@endsection
+
+
 @section('content')
 
   <main>

@@ -1,5 +1,10 @@
 @extends('headerFooter')
 
+@section('title')
+Регистрация
+@endsection
+
+
 @section('content')
 
   <main>
@@ -11,17 +16,32 @@
 
           <div class="col-lg-8">
 
-            <form class="reg">
+
+          @if($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach($errors->all() as $error)
+                  <li> {{ $error }} </li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
+
+          <form action="{{ route('register_form') }}" class="reg" method="post">
+
+            @csrf
+
             <div class="form-group">
-              <input type="name" placeholder="Ваше имя пользователя" class="form-control input-lg">
+              <input name="name" id="name" type="name" placeholder="Ваше имя пользователя" class="form-control input-lg">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Ваш пароль" class="form-control input-lg">
+              <input name="password" id="password" type="password" placeholder="Ваш пароль" class="form-control input-lg">
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Ваша почта" class="form-control input-lg">
+              <input name="email" id="email" type="email" placeholder="Ваша почта" class="form-control input-lg">
             </div>
-            <button class="btn btn-lg btn-default pull-right">отправить</button>
+            <button type="submit" class="btn btn-lg btn-default pull-right">отправить</button>
           </form>
 
            

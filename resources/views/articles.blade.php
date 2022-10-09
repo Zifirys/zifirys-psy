@@ -1,6 +1,11 @@
 
 @extends('headerFooter')
 
+@section('title')
+Статьи
+@endsection
+
+
 @section('content')
 
   <main>

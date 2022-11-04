@@ -1,8 +1,6 @@
-@extends('headerFooter')
+@extends('yield.base')
 
-@section('title')
-Тесты
-@endsection
+@section('title', 'Тесты')
 
 
 @section('content')
@@ -24,7 +22,7 @@
                   </div>            
                   <input type="search" class="form-control input-lg" placeholder="поиск по названию">
                   <div class="input-group-btn">
-                    <button class="btn btn-info btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                   </div>
                 </div>
               </div>

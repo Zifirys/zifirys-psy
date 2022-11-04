@@ -1,6 +1,6 @@
 @extends('yield.base')
 
-@section('title', 'Восстановление пароля')
+@section('title', 'Создание статьи')
 
 
 @section('content')
@@ -14,9 +14,10 @@
 
           <div class="col-lg-8">
 
-            <form class="reg">
+            <form class="create" method="post" action="create">
               <div class="form-group">
-                <input type="email" placeholder="Ваша почта" class="form-control input-lg">
+                <p>Тема/название</p><input type="name" class="form-control input-lg">
+                <p><textarea name="text"></textarea></p>
               </div>
               <button class="btn btn-lg btn-default pull-right">восстановить</button>
             </form>
@@ -26,9 +27,6 @@
 
         </div>
       </div>
-
-      <div class="clear"></div>
-
     </div>
   </main>
 

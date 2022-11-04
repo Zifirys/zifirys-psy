@@ -1,33 +1,50 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\welcomeController;
+use App\Http\Controllers\indexController;
 use App\Http\Controllers\artCotroller;
 use App\Http\Controllers\testController;
 use App\Http\Controllers\recController;
-use App\Http\Controllers\regController;
+use App\Http\Controllers\registerController;
+use App\Http\Controllers\loginController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', [welcomeController::class, 'welcome'])->name('home');
+Route::get('/', [indexController::class, 'index'])->name('home');
 
-Route::get('/articles', [artCotroller::class, 'article'])->name('article');
 
-Route::get('/test', [testController::class, 'tests'])->name('tests');
+Route::prefix('user')->middleware('auth', 'active')->group(function(){
+	//Route::redirect('/user', '/user/posts')->name('user');
 
-Route::get('/recover', [recController::class, 'recover'])->name('recover');
+	Route::get('articles', [artCotroller::class, 'index'])->name('article')->withoutMiddleware('auth')->withoutMiddleware('active');
+	Route::get('articles/create', [artCotroller::class, 'create'])->name('articles.create');
+	Route::post('articles', [artCotroller::class, 'store'])->name('articles.store');
+	Route::get('articles/{post}', [artCotroller::class, 'show'])->name('articles.show');
+	Route::get('articles/{post}/edit', [artCotroller::class, 'edit'])->name('articles.edit');
+	Route::put('articles/{post}', [artController::class, 'update'])->name('articles.update');
+	Route::delete('articles/{post}', [artController::class, 'delete'])->name('articles.delete');
+});
 
 
 
-Route::get('/reg', [regController::class, 'reg'])->name('register');
+Route::prefix('admin')->middleware('auth', 'active', 'admin')->group(function(){
+	
+});
 
-Route::post('/register/submit',  [regController::class, 'submit'])->name('register_form');
+
+
+Route::middleware('guest')->group( function(){
+
+	Route::get('register', [registerController::class, 'index'])->name('register');
+	Route::post('register/submit',  [regController::class, 'submit'])->name('register_form');
+
+	Route::get('login', [loginController::class, 'index'])->name('login');
+});
+
+
+
+
+Route::get('test', [testController::class, 'tests'])->name('test');
+Route::get('test/create', [testController::class, 'create'])->name('test.create');
+
+Route::get('recover', [recController::class, 'recover'])->name('recover');
+

@@ -1,20 +1,21 @@
-@extends('headerFooter')
+@extends('yield.base')
 
-@section('title')
-Добро пожаловать
-@endsection
+@section('title', 'Добро пожаловать')
+
 
 
 @section('content')
 
-<main>
+  <main>
     <div class="wrapper">
       <div class="container">
         <div class="row">
 
 
           <section class="col-lg-3 col-md-3">
-            @include('inc.messages') 
+
+            @include('include.messages')
+
             <div class="panel">
               <div class="panel-heading">
                 <div class="sidebar-header"><p>Телефон доверия</p></div>
@@ -30,13 +31,13 @@
             <section class="page-one">
               <h3>Статьи</h3>
               <p>На сайте есть раздел с статьями. <br>Авторизовавшиеся пользователи могут не только прочитать их, но и написать свои.</p>
-              <a href="articles" class="btn btn-default pull-right">Перейти</a>
+              <a href=" {{ route('article') }} " class="btn btn-default pull-right">Перейти</a>
             </section>
 
             <section class="page-one">
               <h3>Тесты</h3>
               <p>Помимо статей на сайте имеются тесты. <br>Не стоит воспринимать их серьезно, они созданы ислючительно для развлечения.</p>
-              <a href="test" class="btn btn-default pull-right">Перейти</a>
+              <a href=" {{ route('test') }} " class="btn btn-default pull-right">Перейти</a>
             </section>
 
             <section class="page-one">

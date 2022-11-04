@@ -37,7 +37,9 @@ label{
 }
 
 .btn-default:hover{
-	background-color: #ccc;
+	background-color: #000029;
+	border-color: #1476ff;
+	color: #fff;
 }
 
 .input-lg{
@@ -48,16 +50,6 @@ label{
 
 .form-control{
 	border-radius: 8px;
-}
-
-.btn-info{
-	color: black;
-	background-color: #fff;
-	border: solid 1px #afdafc;
-}
-
-.btn-info:hover{
-	background-color: #ccc;
 }
 
 
@@ -87,7 +79,15 @@ label{
 	margin-top: 10px;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus {
+.header a{
+	color: #6495ed;
+}
+
+.header a:hover{
+	color: #87cefa;
+}
+
+/*.nav-pills>li.active>a, .nav-pills>li.active>a:focus {
     color: black;
     background-color: #ccc;
 }
@@ -96,7 +96,7 @@ label{
 	color: #fff;
 	background-color: #999;
 }
-
+*/
 .nav-pills>li>a {
 	margin: 4px;
 	color: #fff;
@@ -105,8 +105,8 @@ label{
 }
 
 .nav-pills>li>a:hover {
-	background-color: #999;
-	border: solid 1px #fff;
+	background-color: #3333ff;
+	border: solid 1px #003366;
 	margin: 5px;
 }
 
@@ -232,7 +232,15 @@ label{
 
 
 
+/*enter page*/
 
+.forget a{
+	color: #ff2400;
+}
+
+.forget a:hover{
+	color: #c10020;
+}
 
 
 

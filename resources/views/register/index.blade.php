@@ -1,9 +1,6 @@
-@extends('headerFooter')
+@extends('yield.base')
 
-@section('title')
-Регистрация
-@endsection
-
+@section('title', 'Регистрация')
 
 @section('content')
 
@@ -28,7 +25,7 @@
           @endif
 
 
-          <form action="{{ route('register_form') }}" class="reg" method="post">
+          <form action=" {{ route('register_form') }} " class="reg" method="post">
 
             @csrf
 

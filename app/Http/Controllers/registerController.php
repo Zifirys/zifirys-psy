@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\registerRequest;
 use App\Models\registers;
 
-class regController extends Controller{
+class registerController extends Controller{
 
-    public function reg(){
-        return view('reg');
+    public function index(){
+        return view('register.index');
     }
 
     public function submit(registerRequest $req){
